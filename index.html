@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing App Using HTML, CSS and JavaScript</title>
+    <link rel="stylesheet" href="app.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <main class="dashboard-container">
+        <div class="category-container">
+            <div class="logo">
+                <h1>Billing App</h1>
+            </div>
+            <div class="categories">
+                <!-- The category data will be render through javascript  -->
+            </div>
+        </div>
+        <div class="product-container">
+            <div class="search-wrapper">
+                <div class="search-box">
+                    <button type="button" class="toggle-menu" onclick="toggleCategorySidebar()">
+                        <i class="ri-menu-4-line"></i>
+                    </button>
+                    <input type="text" placeholder="Search here..." oninput="searchProduct(this.value)">
+                    <button type="button" class="new-billing-btn" onclick="initBilling()">New Billing</button>
+                </div>
+            </div>
+
+            <div class="products-wrapper">
+                <!-- The product data will be render through javascript  -->
+            </div>
+
+        </div>
+        <div class="billing-container">
+            <div class="billing-title">
+                <h1>Billing</h1>
+            </div>
+            <div class="billing-items">
+                <div class="items">
+                    <table id="selected-items">
+                        <!-- The selected item will be render through javascript  -->
+                    </table>
+                </div>
+
+                <div class="billing-calculation">
+                    <table>
+                        <tr>
+                            <th>Total Products</th>
+                            <td id="total-product">0</td>
+                        </tr>
+                        <tr>
+                            <th>Total Amount</th>
+                            <td id="total-amount">₹0</td>
+                        </tr>
+                        <tr>
+                            <th>Customer's Phone</th>
+                            <td> <input type="number" name="phoneNumber"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="save-btn">
+                <button type="button" onclick="saveBilling()">Save</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
