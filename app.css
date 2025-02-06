@@ -471,3 +471,28 @@ input {
     padding: 10px;
     
 }
+
+/* Product hover effects */
+.product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #c3c3c3;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated button effects */
+button {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #ffd700;
+    transform: scale(1.05);
+}
