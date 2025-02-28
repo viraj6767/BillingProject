@@ -41,4 +41,5 @@ function printReceipt() {
     window.print()
 
     document.body.innerHTML = body
+    
 }

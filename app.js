@@ -164,14 +164,18 @@ async function selectProduct(productId, productBox) {
 }
 
 function removeSelectedItem(productId, deleteBtn) {
+
     let selectedProducts = localStorage.getItem('selectedProducts')
     selectedProducts = JSON.parse(selectedProducts)
-
+    
+    let removeProduct = selectedProducts.find(product => product.id === productId)
     let newProductList = selectedProducts.filter(product => product.id != productId)
 
     localStorage.setItem('selectedProducts', JSON.stringify(newProductList))
 
     deleteBtn.closest('tr').remove()
+    let totalAmount =   document.getElementById('total-product').innerHTML
+    totalAmount -= removeProduct.price * removeProduct.qty 
 
     let productBox = document.querySelector(`.product[data-product='${productId}']`)
     productBox.classList.remove('active')
@@ -185,7 +189,7 @@ function calculateAmount() {
 
     let totalProduct = selectedProducts.length;
     let totalAmount = 0
-
+    
     selectedProducts.forEach(product => {
         totalAmount += product.price * product.qty
     });
